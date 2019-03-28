@@ -7,7 +7,7 @@ import sys
 
 AIR_dir = sys.argv[1]
 
-spk_list = ['UN']
+spk_list = ['FA','FB','MA','MC']
 spk_list.sort()
 
 experiment_type = 'PER'
