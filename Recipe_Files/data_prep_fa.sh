@@ -17,8 +17,8 @@ mkdir -p $data_dir $dict_dir $kaldi_files_dir
 #rm $AIR_dataset_dir/Bulk_Data_Kaldi_Files/phones.txt
 #rm $AIR_dataset_dir/Bulk_Data_Kaldi_Files/dev.uttids
 
-cp -a ~/FA_exp/lexicon.txt $AIR_dataset_dir/Bulk_Data_Kaldi_Files/lexicon.txt
-cp -a ~/FA_exp/phones.txt $AIR_dataset_dir/Bulk_Data_Kaldi_Files/phones.txt
+cp -a ~/FA_exp/Recipe_Files/dict_files/lexicon.txt $AIR_dataset_dir/Bulk_Data_Kaldi_Files/lexicon.txt
+cp -a ~/FA_exp/Recipe_Files/dict_files/phones.txt $AIR_dataset_dir/Bulk_Data_Kaldi_Files/phones.txt
 cp -a ~/FA_exp/dev.uttids $AIR_dataset_dir/Bulk_Data_Kaldi_Files/dev.uttids
 
 python3 Python_Files/kaldi_file_preparation_v4.py $AIR_dataset_dir
