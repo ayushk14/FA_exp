@@ -23,7 +23,7 @@ for x in dev; do
      print ";; LABEL \"M\" \"Male\" \"Male speakers\"";
    }
    { wav=$1; spk=wav; sub(/_.*/,"",spk); $1=""; ref=$0;
-     gender=(substr(spk,0,1) == "U" ? "U" : "M");
+     gender=(substr(spk,0,1) == "F" ? "F" : "M");
      spk=substr(spk,0,2);
      printf("%s 1 %s 0.0 %f <O,%s> %s\n", wav, spk, durH[wav], gender, ref);
    }
