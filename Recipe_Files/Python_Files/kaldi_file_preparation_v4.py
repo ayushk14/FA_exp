@@ -136,7 +136,7 @@ for x in split_cat:
 
 
 # # wav.scp
-wav_file_path = AIR_dir+'Bulk_Data/One_Hour_FA_exp/audio/'
+wav_file_path = AIR_dir+'/Bulk_Data/One_Hour_FA_exp/audio/'
 
 for x in split_cat:
     ref_file = open(AIR_dir+'/Bulk_Data_Kaldi_Files/PER/'+x+'.uttids','r')
