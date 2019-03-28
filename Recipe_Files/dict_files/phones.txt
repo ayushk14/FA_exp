@@ -21,7 +21,6 @@ GAl
 GHA
 HA
 I
-IE
 II
 JA
 JAl
@@ -56,7 +55,6 @@ TAl
 THA
 TTA
 TTAl
-TTAll
 TTHA
 U
 UU
