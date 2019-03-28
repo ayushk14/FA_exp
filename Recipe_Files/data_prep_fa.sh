@@ -17,25 +17,25 @@ mkdir -p $data_dir $dict_dir $kaldi_files_dir
 #rm $AIR_dataset_dir/Bulk_Data_Kaldi_Files/phones.txt
 #rm $AIR_dataset_dir/Bulk_Data_Kaldi_Files/dev.uttids
 
-cp -a ~/FA_exp/Recipe_Files/dict_files/lexicon.txt $AIR_dataset_dir/Bulk_Data_Kaldi_Files/lexicon.txt
-cp -a ~/FA_exp/Recipe_Files/dict_files/phones.txt $AIR_dataset_dir/Bulk_Data_Kaldi_Files/phones.txt
-cp -a ~/FA_exp/Recipe_Files/dev.uttids $AIR_dataset_dir/Bulk_Data_Kaldi_Files/dev.uttids
+cp -a ~/FA_exp/Recipe_Files/dict_files/lexicon.txt $kaldi_files_dir/lexicon.txt
+cp -a ~/FA_exp/Recipe_Files/dict_files/phones.txt $kaldi_files_dir/phones.txt
+cp -a ~/FA_exp/Recipe_Files/dev.uttids $kaldi_files_dir/dev.uttids
 
 python3 Python_Files/kaldi_file_preparation_v4.py $AIR_dataset_dir
 echo "Train files preparation done!!!!"
 echo "Copying files created to AIR receipe...."
 
-cp -a $AIR_dataset_dir/Bulk_Data_Kaldi_Files/dev_dur.ark ./$data_dir/
-cp -a $AIR_dataset_dir/Bulk_Data_Kaldi_Files/dev.spk2utt ./$data_dir/
-cp -a $AIR_dataset_dir/Bulk_Data_Kaldi_Files/dev.utt2spk ./$data_dir/
-cp -a $AIR_dataset_dir/Bulk_Data_Kaldi_Files/dev_wav.scp ./$data_dir/
-cp -a $AIR_dataset_dir/Bulk_Data_Kaldi_Files/dev.text ./$data_dir/
-cp -a $AIR_dataset_dir/Bulk_Data_Kaldi_Files/dev.uttids ./$data_dir/
-cp -a $AIR_dataset_dir/Bulk_Data_Kaldi_Files/dev.spk2gender ./$data_dir/
+cp -a $kaldi_files_dir/dev_dur.ark ./$data_dir/
+cp -a $kaldi_files_dir/dev.spk2utt ./$data_dir/
+cp -a $kaldi_files_dir/dev.utt2spk ./$data_dir/
+cp -a $kaldi_files_dir/dev_wav.scp ./$data_dir/
+cp -a $kaldi_files_dir/dev.text ./$data_dir/
+cp -a $kaldi_files_dir/dev.uttids ./$data_dir/
+cp -a $kaldi_files_dir/dev.spk2gender ./$data_dir/
 
 
-cp -a $AIR_dataset_dir/Bulk_Data_Kaldi_Files/lexicon.txt ./$dict_dir/
-cp -a $AIR_dataset_dir/Bulk_Data_Kaldi_Files/phones.txt ./$dict_dir/
+cp -a $kaldi_files_dir/lexicon.txt ./$dict_dir/
+cp -a $kaldi_files_dir/phones.txt ./$dict_dir/
 
 echo "Data and Dict files copied to AIR receipe!!!!"
 
