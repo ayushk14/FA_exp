@@ -10,7 +10,7 @@ g2p_tool_dir=$AIR_dataset_dir/Tools/g2p/Kannadag2p/src
 
 data_dir=data/local/data
 dict_dir=data/local/dict
-kaldi_files_dir=$AIR_dataset_dir/Bulk_Data_Kaldi_Files
+kaldi_files_dir=$AIR_dataset_dir/Bulk_Data_Kaldi_Files/PER
 mkdir -p $data_dir $dict_dir $kaldi_files_dir
 
 #rm $AIR_dataset_dir/Bulk_Data_Kaldi_Files/lexicon.txt
