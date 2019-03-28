@@ -12,8 +12,8 @@ spk_list.sort()
 
 experiment_type = 'PER'
 
-text_files_dir = AIR_dir+'Bulk_Data/One_Hour_FA_exp/phoneme_text/'
-audio_files_dir = AIR_dir+'Bulk_Data/One_Hour_FA_exp/audio/'
+text_files_dir = AIR_dir+'/Bulk_Data/One_Hour_FA_exp/phoneme_text/'
+audio_files_dir = AIR_dir+'/Bulk_Data/One_Hour_FA_exp/audio/'
 
 split_cat = ['dev']
 
