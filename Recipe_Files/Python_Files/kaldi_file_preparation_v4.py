@@ -12,17 +12,18 @@ spk_list.sort()
 
 experiment_type = 'PER'
 
-text_files_dir = AIR_dir+'/Bulk_Data/One_Hour_FA_exp/phoneme_text/'
-audio_files_dir = AIR_dir+'/Bulk_Data/One_Hour_FA_exp/audio/'
+#text_files_dir = AIR_dir+'/Bulk_Data/One_Hour_FA_exp/phoneme_text/'
+#audio_files_dir = AIR_dir+'/Bulk_Data/One_Hour_FA_exp/audio/'
+
+text_files_dir = AIR_dir+'/Bulk_Data/Complete_Data/phoneme_text/'
+audio_files_dir = AIR_dir+'/Bulk_Data/Complete_Data/audio/'
 
 split_cat = ['dev']
 
 
 # # Text
 
-# ## Before running from here, make sure train.uttids and test.uttids is copied from dataset folder to kaldi files folder
-
-# ## If doing for PER, use word_to_phone_transcript.ipynb for generating text files. DO NOT USE BELOW GENERATED TEXT FILES. Then convert text files to phones file before going forward
+# ## Before running from here, make sure train.uttids and test.uttids is copied from dataset folder to bulk data kaldi files folder
 def removeSpecialCharacters(string):
     charac_list = [".","-","–","_",";",":","‘","’","“",",","”","'","`","?","\"","[","]","@"]
 
@@ -43,9 +44,10 @@ for x in split_cat:
 
     temp_list = []
     for item in ref_file_content:
-        file_name = item[3:]
+        file_name = item[:6]
+        folder_name = item[7:]
 
-        split_file = open(text_files_dir+file_name+'.txt','r')
+        split_file = open(text_files_dir+folder_name+'/'+file_name+'.txt','r')
         s_f_content = split_file.read().split('\n')
         s_f_content = list(filter(lambda a: a != '', s_f_content))
 
@@ -138,8 +140,6 @@ for spk in spk_list:
     temp_list.append(temp_str)
 temp_list.sort()
 
-
-# In[39]:
 for x in split_cat:
     file = open(AIR_dir+'/Bulk_Data_Kaldi_Files/PER/'+x+'.spk2gender','w')
     for item in temp_list:
@@ -148,7 +148,8 @@ for x in split_cat:
 
 
 # # wav.scp
-wav_file_path = AIR_dir+'/Bulk_Data/One_Hour_FA_exp/audio/'
+#wav_file_path = AIR_dir+'/Bulk_Data/One_Hour_FA_exp/audio/'
+wav_file_path = AIR_dir+'/Bulk_Data/Complete_Data/audio/'
 
 for x in split_cat:
     ref_file = open(AIR_dir+'/Bulk_Data_Kaldi_Files/PER/'+x+'.uttids','r')
@@ -157,9 +158,10 @@ for x in split_cat:
 
     temp_list = []
     for item in ref_file_content:
-        file_name = item[3:]
+        file_name = item[:6]
+        folder_name = item[7:]
 
-        temp_str = item+' '+wav_file_path+file_name+'.wav\n'
+        temp_str = item+' '+wav_file_path+folder_name+'/'+file_name+'.wav\n'
 
         temp_list.append(temp_str)
     temp_list.sort()
@@ -179,9 +181,10 @@ for x in split_cat:
 
     temp_list = []
     for item in ref_file_content:
-        file_name = item[3:]
+        file_name = item[:6]
+        folder_name = item[7:]
 
-        audio_file = AudioSegment.from_wav(audio_files_dir+file_name+'.wav')
+        audio_file = AudioSegment.from_wav(audio_files_dir+folder_name+'/'+file_name+'.wav')
 
         temp_str = item+' '+str(audio_file.duration_seconds)+'\n'
         temp_list.append(temp_str)
