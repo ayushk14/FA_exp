@@ -7,7 +7,7 @@ import sys
 
 AIR_dir = sys.argv[1]
 
-spk_list = ['FA','FB','MA','MC']
+spk_list = ['FA','FB','MA','MB','MC']
 spk_list.sort()
 
 experiment_type = 'PER'
@@ -58,6 +58,18 @@ for x in split_cat:
                 temp_str = temp_str + line
 
         temp_str = ' '.join(temp_str.split())
+
+        temp_str = temp_str.replace("32 ","")
+        temp_str = temp_str.replace(" 32","")
+        temp_str = temp_str.replace("32","")
+
+        temp_str = temp_str.replace("34 ","")
+        temp_str = temp_str.replace(" 34","")
+        temp_str = temp_str.replace("34","")
+
+        temp_str = temp_str.replace("IE","I E")
+        temp_str = temp_str.replace("IPA","I PA")
+
         temp_list.append(temp_str)
         split_file.close()
     temp_list.sort()

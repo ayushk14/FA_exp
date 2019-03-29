@@ -13,9 +13,9 @@ dict_dir=data/local/dict
 kaldi_files_dir=$AIR_dataset_dir/Bulk_Data_Kaldi_Files/PER
 mkdir -p $data_dir $dict_dir $kaldi_files_dir
 
-#rm $kaldi_files_dir/lexicon.txt
-#rm $kaldi_files_dir/phones.txt
-#rm $kaldi_files_dir/dev.uttids
+rm $kaldi_files_dir/lexicon.txt
+rm $kaldi_files_dir/phones.txt
+rm $kaldi_files_dir/dev.uttids
 
 cp -a ~/FA_exp/Recipe_Files/dict_files/lexicon.txt $kaldi_files_dir/lexicon.txt
 cp -a ~/FA_exp/Recipe_Files/dict_files/phones.txt $kaldi_files_dir/phones.txt
